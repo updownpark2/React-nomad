@@ -57,6 +57,7 @@ export default function App() {
     </div>
   );
 }
+
 // memo는 state가 변경되는 경우에만 렌더링이 되는 것 같고,
 // useeffect는 아예 state가 변경되어도 렌더링이 안되는 것 같아요.
 //그래서 api 같은 1번만 불러와도 되는 경우에 쓰이는 것 같고요
