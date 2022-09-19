@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import RecapApp from "./RecapApp";
-
+import CoinApp from "./CoinTracker/CoinApp";
+import CoinAppRetry from "./CoinTracker/CoinAppRetry";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<CoinAppRetry />);
