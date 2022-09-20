@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./routes/Home";
-import Detail from "./routes/Detail";
-export default function MovieApp() {
+import Hello from "./routes/Hello";
+export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/movie">
-          <Detail />
+        <Route path="/hello/:id">
+          <Hello />
         </Route>
         <Route path="/">
           <Home />
@@ -15,4 +15,3 @@ export default function MovieApp() {
     </Router>
   );
 }
-//https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year

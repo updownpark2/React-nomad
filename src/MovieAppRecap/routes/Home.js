@@ -1,35 +1,36 @@
 import { useEffect, useState } from "react";
-import Movie from "../components/Movie";
+import MoviePaint from "../components/MoviePaint";
 export default function Home() {
+  const [coin, setCoin] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const response = await fetch(
+  const getCoin = async () => {
+    const coindata = await fetch(
       "https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year"
     );
-    const json = await response.json();
-    setMovies(json.data.movies);
+    const json = await coindata.json();
+    setCoin(json.data.movies);
     setLoading((current) => !current);
   };
+
   useEffect(() => {
-    getMovies();
+    getCoin();
   }, []);
-  console.log(movies);
+
   return (
     <div>
       {loading ? (
-        <h1>loading...</h1>
+        <p>로딩중...</p>
       ) : (
         <ul>
-          {movies.map((item, index) => {
+          {coin.map((item) => {
             return (
-              <Movie
-                key={item.id}
+              <MoviePaint
                 id={item.id}
+                key={item.id}
                 title={item.title}
+                rating={item.rating}
                 medium_cover_image={item.medium_cover_image}
                 summary={item.summary}
-                rating={item.rating}
               />
             );
           })}
