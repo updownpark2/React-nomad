@@ -6,6 +6,6 @@ import CoinAppRecap from "./CoinTracker/CoinAppRecap";
 import AppMovie from "./MovieApp/AppMovie";
 import Home from "./MovieAppRecap/routes/Home";
 import App from "./MovieAppRecap/App";
-
+import RetryApp from "./Recap_MovieApp_Last/RetryApp";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppMovie />);
+root.render(<RetryApp />);
